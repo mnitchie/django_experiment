@@ -1,7 +1,7 @@
 # Variables
 compose_dev = ./dev/docker-compose.yml
 compose_local = ./docker-compose.yml
-dev_service = django_experiment_dev
+dev_service = django_experiment-dev
 django_service = django_experiment-runserver
 
 # Recipes: Default

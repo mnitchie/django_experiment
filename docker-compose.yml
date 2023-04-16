@@ -18,8 +18,12 @@ services:
       - ./django_experiment:/usr/src/app
     stdin_open: true
     tty: true
+    depends_on:
+      - django_experiment-postgres
+    env_file:
+      - .env.local
 
-  postgres:
+  django_experiment-postgres:
     container_name: django_experiment-postgres
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"

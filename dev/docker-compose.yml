@@ -12,6 +12,10 @@ services:
     tty: true
     volumes:
       - "../:/usr/src/app"
+    depends_on:
+      - django_experiment-postgres-dev
+    env_file:
+      - ../.env.local
 
   django_experiment-postgres-dev:
     container_name: django_experiment-postgres-dev
