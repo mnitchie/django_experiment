@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  django_experiment-runserver:
+    image: django_experiment-api
+    build: 
+      context: ./django_experiment
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    stdin_open: true
+    tty: true

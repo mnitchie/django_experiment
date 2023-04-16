@@ -111,7 +111,7 @@ shell-server: ## Connect to the shell of the django/runserver container
 sort-imports: ## Sort imports in all python files
 	docker-compose -f $(compose_dev) run --build --rm -T $(dev_service) isort . $(ARGS)
 
-start: collect-static ## Build and run all local services
+start: ## Build and run all local services
 	GIT_COMMIT_HASH=$(shell git rev-parse --short HEAD) ./bin/deploy_dev.sh
 
 test: develop ## run unit tests in development container
