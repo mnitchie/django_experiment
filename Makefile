@@ -2,7 +2,7 @@
 compose_dev = ./dev/docker-compose.yml
 compose_local = ./docker-compose.yml
 dev_service = django_experiment_dev
-django_service = api-runserver
+django_service = django_experiment-runserver
 
 # Recipes: Default
 .DEFAULT_GOAL := help

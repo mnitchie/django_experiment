@@ -1,14 +1,34 @@
 version: '3.7'
 
+networks:
+  django_experiment:
+    driver: bridge
+
 services:
   django_experiment-runserver:
     image: django_experiment-api
+    networks: &network
+      - django_experiment
     build: 
       context: ./django_experiment
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
-    volumes:
-      - .:/code
+    volumes: &volumes
+      - ./django_experiment:/usr/src/app
     stdin_open: true
     tty: true
+
+  postgres:
+    container_name: django_experiment-postgres
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    image: postgres:13
+    networks: *network
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:

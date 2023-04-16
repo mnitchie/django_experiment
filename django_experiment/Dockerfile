@@ -12,8 +12,8 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # psycopg2 dependencies
-# RUN apt-get update
-# RUN apt-get install -y libpq-dev python3-dev
+RUN apt-get update
+RUN apt-get install -y libpq-dev python3-dev
 
 # https://pythonspeed.com/articles/docker-cache-pip-downloads/
 RUN --mount=type=cache,target=/root/.cache \

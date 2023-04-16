@@ -2,6 +2,9 @@ FROM python:3.10.0
 
 WORKDIR /usr/src/app
 
+# psycopg2 dependencies
+RUN apt-get install -y libpq-dev python3-dev
+
 COPY django_experiment/requirements/base.txt ./
 COPY django_experiment/requirements/local.txt ./
 
