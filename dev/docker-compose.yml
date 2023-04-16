@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  django_experiment_dev:
-    container_name: django_experiment_dev
+  django_experiment-dev:
+    container_name: django_experiment-dev
     restart: always
     build:
       context: ../
