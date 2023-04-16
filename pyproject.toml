@@ -1,0 +1,16 @@
+# https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#command-line-options
+[tool.black]
+extend_exclude = ["./env"]
+line-length = 120
+
+[tool.isort]
+extend_skip_glob = ["env/**"]
+line_length = 120
+profile = "black"
+py_version = 39
+src_paths = ["strata_data_api"]
+
+[tool.pytest.ini_options]
+junit_logging = "all" # captures stdout, stderr, and all logging
+log_cli = true
+python_files = ["tests.py", "test_*.py", "*_tests.py"]

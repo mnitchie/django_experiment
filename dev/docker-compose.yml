@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  django_experiment_dev:
+    container_name: django_experiment_dev
+    restart: always
+    build:
+      context: ../
+      dockerfile: dev/Dockerfile
+      
+    stdin_open: true
+    tty: true
+    volumes:
+      - "../:/usr/src/app"
