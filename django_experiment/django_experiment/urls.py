@@ -23,9 +23,9 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("main.urls")),
+    path("main", include("main.urls")),
     path("api-auth/", include("rest_framework.urls")),
-    path("api/", include(router.urls)),
+    path("", include(router.urls)),
 ]
 
 if settings.DEBUG:
